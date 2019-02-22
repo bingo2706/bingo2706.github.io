@@ -1,0 +1,1 @@
+# bingo2706.github.io
