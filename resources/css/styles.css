@@ -1,0 +1,421 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    color: #5a5a5a;
+    background-color: #ffffff;
+    /* hiển thị chữ lên website */
+    text-rendering: optimizeLegibility;
+    /* mac dinh la 16px */
+
+}
+/*---------------------------------------------------------------------*/
+/*-----------------------REUSEABLE COMPONENT---------------------------*/
+/*---------------------------------------------------------------------*/
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: #e67e22;
+    padding: 15px 30px;
+    margin: 0 5px;
+    border-radius: 20px;
+    /* do cặp thẻ a mặc định là inline nên k chỉnh đc width vs height,
+    vì thế nên sử dụng inline-block */
+    width: 190px;
+    display: inline-block;
+    /* căn chỉnh chữ chính giữa border */
+    text-align: center;
+    transition: all .3s;
+}
+.btn:hover,
+.btn:active{
+    background-color: #d35400;
+}
+.clearfix::after{
+    content: " ";
+    display: table;
+    clear: both;
+}
+.row{
+    /* chiều rộng tối đa là 1140px thay thế cho width: 1140px */
+    max-width: 1140px;
+    margin: 0 auto;
+}
+h1, h2, h3{
+    /* chuyển tất cả chữ thành in hoa */
+    text-transform: uppercase;
+   /* khoảng cách giữa các kí tự */
+    letter-spacing: 1px;
+}
+h1{
+    
+    
+    font-size: 300%;
+    font-weight: 400;
+    /* khoảng cách giữa những chữ */
+    word-spacing: 5px;
+    color: white;
+    /* khoảng cách giữa các dòng */
+    line-height: 135%;
+    margin-bottom: 50px;
+}
+h2{
+    text-align: center;
+    font-size: 180%;
+    font-weight: 700;
+    color: #e67e22;
+}
+h2::after{
+    content: " ";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background-color:rgba(230, 126, 34,0.5);
+    margin: 0 auto;
+}
+.p-long{
+    text-align: center;
+    color: #265077;
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 70%;
+    margin-left: 15%;
+    line-height: 140%;
+}
+h3{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #265077;
+    color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-bottom: 15px;
+}
+.small-icon{
+    color: #305679;
+    font-size: 130%;
+    margin-right: 10px;
+}
+
+
+/*----------------------------------------------------------------------*/
+/*-----------------------------HEADER------------------------------------*/
+/*---------------------------------------------------------------------*/
+
+header{
+    /* linear-gradient thuộc tính phối màu, deg để phân chia phối màu, "0.8" "0.85"
+    để chỉnh cho background trong suốt */
+    background-image: linear-gradient(45deg,rgb(2,33,64,0.8)55%,rgb(45,95,93,0.85)), url("../img/anh-bia-facebook-14.jpg");
+    background-size: cover;
+    /* căn chỉnh background chính giữa */
+    background-position: center;
+    /* view background 100vh tương ứng full màn hình web */
+    height: 100vh;
+    /* hiệu ứng background */
+    background-attachment: fixed;
+}
+
+.logo{
+    float: left;
+    width: 400px;
+    margin-left: 120px;
+    margin-top: 30px;
+}
+.main-nav{
+    float: right;
+    /* bỏ hiệu ứng của chữ */
+    list-style: none;
+    margin-right: 50px;
+    margin-top: 55px;
+}
+.main-nav li a{
+    /* bỏ ký tự numbering đầu dòng */
+    text-decoration: none;
+    color: white;
+    font-size: 110%;
+    font-weight: 700;
+    /* tạo hiệu ứng hiện border */
+    transition: border-bottom 0.5s;
+    padding: 3px 0;
+}
+.main-nav li{
+    /* chỉnh cho chữ hiện một hàng, do tính chất của cặp thẻ li nên chữ hiển thị thành cột */
+    display: inline-block;
+    margin-right: 30px;
+}
+/* tạo hiệu ứng boder cho chữ khi di chuyển vào đối tượng */
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #cccccc;
+}
+.heading-main-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%,-55%);
+    width: 1140px;
+}
+/*--------------------------------------------------------------*/
+/*-------------------------ABOUT SECTION------------------------*/
+/*--------------------------------------------------------------*/
+section{
+    padding: 50px;
+}
+.about-picture img{
+    width: 90%;
+    border-radius: 20px;
+    border: 2px solid #c1defa;
+    box-shadow: 0px 5px 15px 5px #265077;
+    /* x - y - độ mờ - độ phóng-màu */
+    transition: all .7s;
+    
+}
+.about-picture{
+    position: relative;
+}
+.picture-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-65%,100%);
+    opacity: 0;
+    transition: all .7s;
+}
+.about-picture:hover img,
+.about-picture:active img{
+    filter: brightness(55%) blur(2px);
+}
+.about-picture:hover .picture-title,
+.about-picture:active .picture-title{
+    transform: translate(-65%,-50%);
+    opacity: 1;
+}
+/*-------------------------------------------------------------*/
+/*-----------------------PRODUCTS SECTION------------------*/
+/*---------------------------------------------------------*/
+
+.products-section
+{
+    background-color: #f4f4f4;
+}
+.products-section h2{
+    margin-bottom: 60px;
+}
+.product-box{
+    background-color: #eeefff;
+    width: 90%;
+    height: 350px;
+    box-shadow: 3px 5px 10px #e0e0e0;
+}
+.produc-price{
+    font-size: 250%;
+    font-weight: 300;
+    text-align: center;
+    color: #265077;
+}
+.product-price span{
+    font-size: 80%;
+    font-weight: 200;
+   
+}
+.product-box ul li{
+    margin-left: 20%;
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product-box .btn{
+    margin-left: 20%;
+}
+/*------------------------------------------------------------*/
+/*-----------------------TESTIMONIAL-SECTION------------------*/
+/*------------------------------------------------------------*/
+
+.testimonials-section{
+    background-image: linear-gradient(45deg,rgb(2,33,64,0.8)55%,rgb(45,95,93,0.85)), url(../img/images.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.testimonials-section h2{
+    margin-bottom: 70px;
+}
+blockquote{
+    font-style: italic;
+    line-height: 140%;
+    color: white;
+    position: relative;
+    width: 95%;
+    
+}
+blockquote:before{
+    content: '\201C';
+    display: block;
+    font-size: 400%;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+}
+cite{
+    display: block;
+    color: #adcce9;
+    margin-top: 25px;
+}
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #265077;
+    /* căn chữ giữa hình theo chiều dọc */
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/*----------------------------------------------*/
+/*--------------------SPONSORS-SECTION----------*/
+/*----------------------------------------------*/
+.sponsors-section{
+    background-color: #f4f4f4;
+}
+.sponsors-section h2{
+margin-bottom: 50px;
+}
+.sponsors-showcase{
+margin-left: 8%;
+}
+.sponsors-showcase li{
+    list-style: none;
+    float: left ;
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logo-sponsor{
+    width: 140px;
+    height: 140px;
+    /* thuộc tính khi trỏ vào */
+    cursor: pointer;
+    transition: all .3s;
+}
+.sponsors-showcase li .logo-sponsor:hover,
+.sponsors-showcase li .logo-sponsor:active{
+    /* phóng to */
+    transform: scale(1.2);
+}
+figcaption{
+    color: #265077;
+    font-weight: 900;
+    font-size: 120%;
+    cursor: pointer;
+}
+/*--------------------------------------------------*/
+/*-----------------------FOOTER---------------------*/
+/*--------------------------------------------------*/
+footer{
+    text-align: center;
+    background-color: #474545;
+    color: white;
+    padding: 20px;
+}
+/*--------------------------------------------------*/
+/*---------------------CONTACT-SECTION----------------*/
+/*---------------------------------------------------*/
+.contact-section{
+    background-image: linear-gradient(45deg,rgb(2,33,64,0.8)55%,rgb(45,95,93,0.85)), url(../img/book-and-eye-glasses-for-read-and-write-over-blurred-nature-outd_1150-775.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.infomation{
+    list-style: none;
+    color: white;
+    line-height: 200%;
+    margin-top: 70px;
+    word-spacing: 1px;
+    font-size: 95%;
+}
+.infomation .small-icon{
+    color: rgb(151, 68, 151);
+    
+}
+.infomation .small-icon:hover,
+.information .small-icon:active{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+.social-icons{
+    list-style: none;
+    margin-top: 50px;
+}
+.social-icons li{
+    display: inline-block;
+    font-size: 250%;
+    margin-left: 20px;
+    color: white;
+}
+.social-icons li i{
+    transition: all .3s;
+}
+.social-icons li i:hover,
+.social-icons li i:active{
+    transform: scale(1.3);
+    color:#e67e22;
+    cursor: pointer;
+}
+/*-------------------------Form-----------------------------*/
+/*-----------------------------------------------------------*/
+/*----------------------------------------------------------*/
+form{
+    background-color: rgba(0,0,0, .4);
+    margin-left: 40%;
+    width: 68%;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+form .row{
+    margin-bottom: 20px;
+}
+label{
+    font-size: 150%;
+    color: white;
+}
+input,textarea{
+    /* xoa vien xanh o khung */
+    outline: none;
+    padding: 10px;
+    background-color: rgba(48, 47, 47, 0.3);
+    border: 1px solid rgba(77, 76, 76, 0.7);
+    margin-left: 30px;
+    cursor: pointer;
+}
+textarea{
+    resize: none;
+    height: 100px;
+}
+input{
+    height: 50px;
+
+}
+input[type="text"], input[type="email"], textarea{
+    width: 80%;
+    font-size: 100%;
+    transition: all .3s;
+}
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus{
+    color: white;
+    background-color: rgba(48, 47, 47, 0.8)
+}
+form .row:last-child{
+    text-align: center;
+}
+input[type="submit"]{
+    font-weight: 700;
+    font-size: 100%;
+    border-radius: 5px;
+    width: 60%;
+}
