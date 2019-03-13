@@ -1,4 +1,6 @@
+
 /* Big tablet to 1200px; */
+/*
 @media only screen and (max-width: 1200px){
     html{
         font-size: 16px;
@@ -12,7 +14,7 @@
    }
    
    /* Small tablet to big tablet from 768x to 1023px */
-   @media only screen and (max-width:1023px){
+  /* @media only screen and (max-width:1023px){
        .logo{
            width: 300px;
            margin-left: 40px;
@@ -55,7 +57,7 @@
    }
    
    /* Small phones to small tablets */
-   @media only screen and (max-width: 767px){
+  /* @media only screen and (max-width: 767px){
     .col{
         width: 100%;
     }
@@ -122,6 +124,7 @@
        margin-bottom: 20px;
    }
    /* Small phones from 0 to 480px' */
-   @media only screen and(max-width: 480px){
+  /* @media only screen and(max-width: 480px){
        
    }
+   
